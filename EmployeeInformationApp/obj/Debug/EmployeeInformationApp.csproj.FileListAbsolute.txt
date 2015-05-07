@@ -1,0 +1,16 @@
+C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.exe.config
+C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.exe
+C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.pdb
+C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.EmployeeInfoUI.resources
+C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.Properties.Resources.resources
+C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.csproj.GenerateResource.Cache
+C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.exe
+C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.pdb
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.EmployeeInfoUI.resources
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.Properties.Resources.resources
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.csproj.GenerateResource.Cache
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.exe.config
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.exe
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.pdb
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.exe
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.pdb
