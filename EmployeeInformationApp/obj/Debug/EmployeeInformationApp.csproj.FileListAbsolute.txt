@@ -6,6 +6,7 @@ C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\Employ
 C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.csproj.GenerateResource.Cache
 C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.exe
 C:\Users\Web App Develop .Net\Desktop\Lab Practice\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.pdb
+<<<<<<< HEAD
 C:\Users\Web App Develop .Net\Desktop\ram\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.exe.config
 C:\Users\Web App Develop .Net\Desktop\ram\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.exe
 C:\Users\Web App Develop .Net\Desktop\ram\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.pdb
@@ -14,3 +15,13 @@ C:\Users\Web App Develop .Net\Desktop\ram\EmployeeInformationApp\EmployeeInforma
 C:\Users\Web App Develop .Net\Desktop\ram\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.csproj.GenerateResource.Cache
 C:\Users\Web App Develop .Net\Desktop\ram\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.exe
 C:\Users\Web App Develop .Net\Desktop\ram\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.pdb
+=======
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.EmployeeInfoUI.resources
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.Properties.Resources.resources
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.csproj.GenerateResource.Cache
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.exe.config
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.exe
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\bin\Debug\EmployeeInformationApp.pdb
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.exe
+C:\Users\Ram\Desktop\EmployeeInformationApp\EmployeeInformationApp\obj\Debug\EmployeeInformationApp.pdb
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c

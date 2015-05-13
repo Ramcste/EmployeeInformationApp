@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+<<<<<<< HEAD
 using System.Configuration;
+=======
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -17,6 +20,7 @@ namespace EmployeeInformationApp
         public EmployeeInfoUI()
         {
             InitializeComponent();
+<<<<<<< HEAD
 
             deleteInformationButton.Visible = false;
         }
@@ -28,6 +32,12 @@ namespace EmployeeInformationApp
         private bool updateMode = false;
 
         private int employeeId;
+=======
+        }
+
+
+
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c
         private void saveButton_Click(object sender, EventArgs e)
         {
             Employee emp = new Employee();
@@ -37,6 +47,7 @@ namespace EmployeeInformationApp
             emp.email = emailTextBox.Text;
             emp.salary = float.Parse(salaryTextBox.Text);
 
+<<<<<<< HEAD
             isemailexits = IsEmailExits(emp.email);
 
             if (updateMode)
@@ -67,11 +78,21 @@ namespace EmployeeInformationApp
                 {
                     MessageBox.Show("Updating Email Id already Exists");
                 }
+=======
+           
+
+            if ( IsEmailExits(emp.email))
+
+            {
+                MessageBox.Show("This email id already exists");
+                return;
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c
             }
 
             else
             {
 
+<<<<<<< HEAD
 
 
 
@@ -109,6 +130,33 @@ namespace EmployeeInformationApp
                     }
 
                 }
+=======
+                string connectionString = @"Server=ROSHANI;Database=store;Integrated Security=true;";
+
+                SqlConnection connection = new SqlConnection(connectionString);
+
+                string query = "INSERT INTO Employees VALUES('" + emp.name + "','" + emp.address + "','" + emp.email +
+                               "','" + emp.salary + "')";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                connection.Open();
+                int rowseffected = command.ExecuteNonQuery();
+                connection.Close();
+
+                if (rowseffected > 0)
+                {
+                    MessageBox.Show("Information is saved");
+                    GetClearTextBoxes();
+                    GetDataLoadedInListView();
+
+                }
+                else
+                {
+                    MessageBox.Show("Error!!");
+                }
+
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c
             }
         }
 
@@ -130,7 +178,14 @@ namespace EmployeeInformationApp
         {
 
 
+<<<<<<< HEAD
             //   string connectionString = @"Server=.\SQLEXPRESS;Database=Company;Integrated Security=true;";
+=======
+            string connectionString = @"Server=ROSHANI;Database=store;Integrated Security=true;";
+           
+            bool isemailexits = false;
+
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c
 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -145,7 +200,13 @@ namespace EmployeeInformationApp
             while (reader.Read())
             {
                 isemailexits = true;
+<<<<<<< HEAD
             }
+=======
+                break;
+            }
+            reader.Close();
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c
             connection.Close();
 
             return isemailexits;
@@ -160,7 +221,11 @@ namespace EmployeeInformationApp
 
             List<Employee> employees = new List<Employee>();
 
+<<<<<<< HEAD
             // string connectionString = @"Server=.\SQLEXPRESS;Database=Company;Integrated Security=true;";
+=======
+            string connectionString = @"Server=ROSHANI;Database=store;Integrated Security=true;";
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c
 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -204,6 +269,7 @@ namespace EmployeeInformationApp
 
         }
 
+<<<<<<< HEAD
 
 
         private void employeeListView_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -217,6 +283,22 @@ namespace EmployeeInformationApp
             SqlConnection connection = new SqlConnection(connectionString);
 
             string query = "SELECT e_name,e_address,e_email,e_salary FROM Employees WHERE e_id='" + id + "'";
+=======
+       
+        private void employeeListView_DoubleClick(object sender, EventArgs e)
+        {
+            var item = employeeListView.SelectedItems[0];
+
+
+
+            int id = int.Parse(item.Text);
+
+            string connectionString = @"Server=ROSHANI;Database=store;Integrated Security=true;";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            string query = "SELECT * FROM Employees WHERE e_id='" + id + "'";
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -231,6 +313,7 @@ namespace EmployeeInformationApp
                 addressTextBox.Text = reader["e_address"].ToString();
                 emailTextBox.Text = reader["e_email"].ToString();
                 salaryTextBox.Text = reader["e_salary"].ToString();
+<<<<<<< HEAD
 
 
             }
@@ -267,5 +350,16 @@ namespace EmployeeInformationApp
 
 
         }
+=======
+                emailTextBox.Enabled = false;
+
+            }
+            reader.Close();
+            connection.Close();
+
+            saveButton.Text = "Update";
+        }
+        
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c
     }
 }

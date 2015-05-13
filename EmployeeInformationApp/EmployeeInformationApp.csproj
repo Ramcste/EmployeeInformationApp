@@ -33,7 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+<<<<<<< HEAD
     <Reference Include="System.Configuration" />
+=======
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,7 +56,10 @@
       <DependentUpon>EmployeeInfoUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+<<<<<<< HEAD
     <Compile Include="Properties\AssemblyInfo.cs" />
+=======
+>>>>>>> 5e4be89122815b38b195709b35fa9a6c1509268c
     <EmbeddedResource Include="EmployeeInfoUI.resx">
       <DependentUpon>EmployeeInfoUI.cs</DependentUpon>
     </EmbeddedResource>
