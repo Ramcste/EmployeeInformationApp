@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -16,11 +17,17 @@ namespace EmployeeInformationApp
         public EmployeeInfoUI()
         {
             InitializeComponent();
+
+            deleteInformationButton.Visible = false;
         }
+
+        string connectionString = ConfigurationManager.ConnectionStrings["EmployeeInformationConString"].ConnectionString;
 
         private bool isemailexits = false;
 
+        private bool updateMode = false;
 
+        private int employeeId;
         private void saveButton_Click(object sender, EventArgs e)
         {
             Employee emp = new Employee();
@@ -32,40 +39,76 @@ namespace EmployeeInformationApp
 
             isemailexits = IsEmailExits(emp.email);
 
-
-            if (isemailexits)
+            if (updateMode)
             {
-                MessageBox.Show("This email id already exists");
+                if (!isemailexits)
+                {
+                    //  string connectionString = @"Server=.\SQLEXPRESS;Database=Company;Integrated Security=true;";
+
+                    SqlConnection connection = new SqlConnection(connectionString);
+
+                    string query = "UPDATE Employees SET e_name='" + emp.name + "',e_address='" + emp.address +
+                                   "',e_email='" + emp.email + "',e_salary='" + emp.salary + "' WHERE e_id='" + employeeId + "' ";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    connection.Open();
+                    int rowseffected = command.ExecuteNonQuery();
+                    connection.Close();
+
+                    if (rowseffected > 0)
+                    {
+                        MessageBox.Show("Data Updated Succssfully");
+                        GetDataLoadedInListView();
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show("Updating Email Id already Exists");
+                }
             }
 
             else
             {
 
-                string connectionString = @"Server=.\SQLEXPRESS;Database=Company;Integrated Security=true;";
 
-                SqlConnection connection = new SqlConnection(connectionString);
 
-                string query = "INSERT INTO Employees VALUES('" + emp.name + "','" + emp.address + "','" + emp.email +
-                               "','" + emp.salary + "')";
 
-                SqlCommand command = new SqlCommand(query, connection);
-
-                connection.Open();
-                int rowseffected = command.ExecuteNonQuery();
-                connection.Close();
-
-                if (rowseffected > 0)
+                if (isemailexits)
                 {
-                    MessageBox.Show("Information is saved");
-                    GetClearTextBoxes();
-                    GetDataLoadedInListView();
-
+                    MessageBox.Show("This email id already exists");
                 }
+
                 else
                 {
-                    MessageBox.Show("Error!!");
-                }
 
+                    //   string connectionString = @"Server=.\SQLEXPRESS;Database=Company;Integrated Security=true;";
+
+                    SqlConnection connection = new SqlConnection(connectionString);
+
+                    string query = "INSERT INTO Employees VALUES('" + emp.name + "','" + emp.address + "','" + emp.email +
+                                   "','" + emp.salary + "')";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    connection.Open();
+                    int rowseffected = command.ExecuteNonQuery();
+                    connection.Close();
+
+                    if (rowseffected > 0)
+                    {
+                        MessageBox.Show("Information is saved");
+                        GetClearTextBoxes();
+                        GetDataLoadedInListView();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error!!");
+                    }
+
+                }
             }
         }
 
@@ -87,7 +130,7 @@ namespace EmployeeInformationApp
         {
 
 
-            string connectionString = @"Server=.\SQLEXPRESS;Database=Company;Integrated Security=true;";
+            //   string connectionString = @"Server=.\SQLEXPRESS;Database=Company;Integrated Security=true;";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -117,7 +160,7 @@ namespace EmployeeInformationApp
 
             List<Employee> employees = new List<Employee>();
 
-            string connectionString = @"Server=.\SQLEXPRESS;Database=Company;Integrated Security=true;";
+            // string connectionString = @"Server=.\SQLEXPRESS;Database=Company;Integrated Security=true;";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -161,15 +204,19 @@ namespace EmployeeInformationApp
 
         }
 
-        private void employeeListView_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private void employeeListView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int id = int.Parse(employeeListView.SelectedItems[0].Text);
 
-            string connectionString = @"Server=.\SQLEXPRESS;Database=Company;Integrated Security=true;";
+            employeeId = id;
+
+            //  string connectionString = @"Server=.\SQLEXPRESS;Database=Company;Integrated Security=true;";
 
             SqlConnection connection = new SqlConnection(connectionString);
 
-            string query = "SELECT e_name,e_address,e_email,e_salary FROM Employees WHERE e_id='"+id+"'";
+            string query = "SELECT e_name,e_address,e_email,e_salary FROM Employees WHERE e_id='" + id + "'";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -179,7 +226,7 @@ namespace EmployeeInformationApp
 
             while (reader.Read())
             {
-                
+
                 nameTextBox.Text = reader["e_name"].ToString();
                 addressTextBox.Text = reader["e_address"].ToString();
                 emailTextBox.Text = reader["e_email"].ToString();
@@ -189,6 +236,36 @@ namespace EmployeeInformationApp
             }
 
             connection.Close();
+
+            updateMode = true;
+            saveButton.Text = "Update";
+            deleteInformationButton.Visible = true;
+        }
+
+        private void deleteInformationButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Do you want to delete this employee?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dialog == DialogResult.Yes)
+            {
+                SqlConnection connection = new SqlConnection(connectionString);
+
+                string query = "DELETE  FROM Employees WHERE e_id='" + employeeId + "' ";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                connection.Open();
+                int rowseffected = command.ExecuteNonQuery();
+                connection.Close();
+
+                if (rowseffected > 0)
+                {
+                    MessageBox.Show("Data Deleted Successfully");
+                    GetDataLoadedInListView();
+                }
+            }
+
+
         }
     }
 }

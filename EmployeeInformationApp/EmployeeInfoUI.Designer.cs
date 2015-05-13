@@ -43,6 +43,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.deleteInformationButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -127,13 +128,14 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.employeeListView.Location = new System.Drawing.Point(80, 342);
+            this.employeeListView.FullRowSelect = true;
+            this.employeeListView.Location = new System.Drawing.Point(72, 342);
             this.employeeListView.Name = "employeeListView";
-            this.employeeListView.Size = new System.Drawing.Size(344, 207);
+            this.employeeListView.Size = new System.Drawing.Size(474, 207);
             this.employeeListView.TabIndex = 9;
             this.employeeListView.UseCompatibleStateImageBehavior = false;
             this.employeeListView.View = System.Windows.Forms.View.Details;
-            this.employeeListView.SelectedIndexChanged += new System.EventHandler(this.employeeListView_SelectedIndexChanged);
+            this.employeeListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.employeeListView_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -142,24 +144,39 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Name";
+            this.columnHeader2.Width = 86;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Address";
+            this.columnHeader3.Width = 88;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Email";
+            this.columnHeader4.Width = 115;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Salary";
+            this.columnHeader5.Width = 119;
+            // 
+            // deleteInformationButton
+            // 
+            this.deleteInformationButton.Location = new System.Drawing.Point(213, 264);
+            this.deleteInformationButton.Name = "deleteInformationButton";
+            this.deleteInformationButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteInformationButton.TabIndex = 10;
+            this.deleteInformationButton.Text = "Delete";
+            this.deleteInformationButton.UseVisualStyleBackColor = true;
+            this.deleteInformationButton.Click += new System.EventHandler(this.deleteInformationButton_Click);
             // 
             // EmployeeInfoUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 561);
+            this.Controls.Add(this.deleteInformationButton);
             this.Controls.Add(this.employeeListView);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.salaryTextBox);
@@ -195,6 +212,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Button deleteInformationButton;
     }
 }
 
